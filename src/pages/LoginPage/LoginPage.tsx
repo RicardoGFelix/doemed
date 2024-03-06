@@ -14,10 +14,10 @@ function LoginPage() {
       <div className="action-container">
         <div className="form-login-container">
             <div className="input-container">
-                <input className="input" type="text" placeholder="CPF" />
+                <input className="input user" type="text" placeholder="CPF" />
             </div>
             <div className="input-container">
-                <input className="input" type="password" placeholder="Senha" />
+                <input className="input password" type="password" placeholder="Senha" />
             </div>
             <button className="button link">Esqueci minha senha</button>
         </div>
