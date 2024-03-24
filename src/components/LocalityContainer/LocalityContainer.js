@@ -25,7 +25,6 @@ export default function LocalityContainer() {
   async function fetchCities() {
     try {
       let selectedState = cookies.getCookie("@doemed/state_register");
-      console.log(selectedState);
 
       if (selectedState) {
         cookies.deleteCookie("@doemed/city_register");
