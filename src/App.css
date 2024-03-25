@@ -1,6 +1,7 @@
 :root {
   --principal-color: #0CC4DC;
   --secundary-color: #FFFFFF;
+  --default-black: #000000;
 }
 
 * {

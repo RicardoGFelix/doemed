@@ -1,0 +1,42 @@
+.header-container {
+  width: 100%;
+  max-width: 1110px;
+  height: 152px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 128px;
+}
+
+.header-container .button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    cursor: pointer;
+    background-size: 42px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+}
+
+.header-container .button.menu {
+    background-image: url(../../assets/MenuIcon.svg);
+}
+
+.header-container .button.notifications {
+    background-image: url(../../assets/NotificationsIcon.svg);
+}
+
+.header-container .logo-container .logo-image {
+    height: 128px;
+}
+
+@media (max-width: 1023px) {
+    .header-container {
+        padding: 24px;
+    }
+    .header-container .logo-container .logo-image {
+        height: 104px;
+    }
+}
