@@ -4,23 +4,18 @@ import "./styles.css";
 import Header from "../../components/Header/Header";
 import MeasureSelect from "../../components/MeasureSelect/MeasureSelect";
 
-function NecessityEditPage() {
+function MedicineEditPage() {
   return (
-    <div className="necessity-edit-page">
+    <div className="medicine-edit-page">
       <Header />
 
-      <div className="page-title">Edite sua necessidade</div>
+      <div className="page-title">Edite seu medicamento</div>
 
-      <div className="necessity-edit-page-content">
-        <div className="form-necessity-edit-container">
+      <div className="medicine-edit-page-content">
+        <div className="form-medicine-edit-container">
           <div className="form-inputs">
             <div className="input-container">
-              <input
-                className="input"
-                type="text"
-                placeholder="Fármaco"
-                disabled
-              />
+              <input className="input" type="text" placeholder="Fármaco" disabled />
             </div>
             <div className="input-container">
               <input
@@ -43,9 +38,9 @@ function NecessityEditPage() {
             <div className="input-container">
               <input
                 className="input"
-                type="text"
-                placeholder="Data da Receita"
-                disabled
+                type="number"
+                min={0}
+                placeholder="Quantidade em Estoque"
               />
             </div>
           </div>
@@ -56,4 +51,4 @@ function NecessityEditPage() {
   );
 }
 
-export default NecessityEditPage;
+export default MedicineEditPage;
