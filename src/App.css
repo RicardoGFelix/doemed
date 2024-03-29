@@ -2,6 +2,11 @@
   --principal-color: #0CC4DC;
   --secundary-color: #FFFFFF;
   --default-black: #000000;
+  --default-red: #FF0000;
+  --free-targe: #F8F8FF;
+  --opened-status: #FFD700;
+  --attended-status: #00FF7F;
+  --denied-status: #FF6347;
 }
 
 * {
