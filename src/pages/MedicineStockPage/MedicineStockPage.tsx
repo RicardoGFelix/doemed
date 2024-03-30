@@ -9,7 +9,7 @@ function MedicineStockPage() {
     <div className="medicine-stock-page">
       <Header />
 
-      <div className="page-title">Suas necessidades</div>
+      <div className="page-title">Seu estoque de medicamentos</div>
 
       <div className="medicine-stock-page-content">
         <div className="search-container">
