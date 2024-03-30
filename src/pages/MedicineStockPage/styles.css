@@ -1,4 +1,4 @@
-.my-necessities-page {
+.medicine-stock-page {
   width: 100vw;
   height: auto;
   min-height: 100vh;
@@ -9,7 +9,7 @@
   padding: 0px;
 }
 
-.my-necessities-page .page-title {
+.medicine-stock-page .page-title {
   width: 100%;
   height: auto;
   color: var(--default-black);
@@ -21,7 +21,7 @@
   padding: 24px 0px;
 }
 
-.my-necessities-page .page-title .profile-button {
+.medicine-stock-page .page-title .profile-button {
   width: fit-content;
   height: auto;
   background: transparent;
@@ -33,7 +33,7 @@
   line-height: normal;
 }
 
-.my-necessities-page .my-necessities-page-content {
+.medicine-stock-page .medicine-stock-page-content {
   width: 100%;
   height: auto;
   min-height: calc(100vh - 229px);
@@ -44,7 +44,7 @@
   padding-bottom: 24px;
 }
 
-.my-necessities-page .my-necessities-page-content .search-container {
+.medicine-stock-page .medicine-stock-page-content .search-container {
   width: 100%;
   max-width: 854px;
   height: 48px;
@@ -58,7 +58,7 @@
   margin: 24px 0px;
 }
 
-.my-necessities-page .my-necessities-page-content .search-container .input {
+.medicine-stock-page .medicine-stock-page-content .search-container .input {
   width: calc(100% - 32px);
   height: 48px;
   padding: 0px 16px;
@@ -71,22 +71,22 @@
   color: var(--default-black);
 }
 
-.my-necessities-page
-  .my-necessities-page-content
+.medicine-stock-page
+  .medicine-stock-page-content
   .search-container
   .input::placeholder {
   font-weight: 400;
   color: var(--principal-color);
 }
 
-.my-necessities-page .my-necessities-page-content .search-container .search-button {
+.medicine-stock-page .medicine-stock-page-content .search-container .search-button {
   width: 24px;
   height: 24px;
   background: url(../../assets/SearchIcon.svg) no-repeat center center;
   border: none;
 }
 
-.my-necessities-page .my-necessities-page-content .necessities-list {
+.medicine-stock-page .medicine-stock-page-content .medicine-list {
   width: 100%;
   max-width: 854px;
   display: flex;
@@ -97,15 +97,19 @@
 }
 
 @media (max-width: 1023px) {
-  .my-necessities-page {
+  .medicine-stock-page {
     flex-direction: column;
   }
 
-  .my-necessities-page .my-necessities-page-content .search-container {
+  .medicine-stock-page .medicine-stock-page-content {
+    min-height: calc(100vh - 229px);
+  }
+
+  .medicine-stock-page .medicine-stock-page-content .search-container {
     width: calc(100% - 48px);
   }
 
-  .my-necessities-page .my-necessities-page-content .necessities-list {
+  .medicine-stock-page .medicine-stock-page-content .medicine-list {
     padding: 0px 24px;
   }
 }

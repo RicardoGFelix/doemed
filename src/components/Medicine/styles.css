@@ -1,6 +1,6 @@
-.my-necessity-container {
+.medicine-container {
   width: calc(50% - 16px);
-  height: 204px;
+  height: 120;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +13,7 @@
   padding: 24px;
 }
 
-.my-necessity-container .information-row {
+.medicine-container .information-row {
   width: 100%;
   height: auto;
   display: flex;
@@ -23,7 +23,7 @@
   gap: 8px;
 }
 
-.my-necessity-container .information-row .my-necessity-title {
+.medicine-container .information-row .medicine-title {
   width: calc(80% - 4px);
   height: auto;
   color: var(--default-black);
@@ -33,22 +33,22 @@
   line-height: normal;
 }
 
-.my-necessity-container .information-row .my-necessity-targe {
+.medicine-container .information-row .medicine-targe {
   width: calc(20% - 4px);
   height: 8px;
   background-color: var(--free-targe);
 }
 
-.my-necessity-container .information-row .my-necessity-targe.black {
+.medicine-container .information-row .medicine-targe.black {
   background-color: var(--default-black);
 }
 
-.my-necessity-container .information-row .my-necessity-targe.red {
+.medicine-container .information-row .medicine-targe.red {
   background-color: var(--default-red);
 }
 
-.my-necessity-container .information-row .my-necessity-text {
-  width: calc(65% - 8px);
+.medicine-container .information-row .medicine-text {
+  width: calc(50% - 8px);
   height: auto;
   color: var(--default-black);
   font-size: 16px;
@@ -57,29 +57,11 @@
   line-height: normal;
 }
 
-.my-necessity-container .information-row .my-necessity-status {
-  width: calc(35% - 8px);
-  height: auto;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+.medicine-container .information-row .medicine-text.right {
   text-align: end;
 }
 
-.my-necessity-container .information-row .my-necessity-status.opened {
-  color: var(--opened-status);
-}
-
-.my-necessity-container .information-row .my-necessity-status.attended {
-  color: var(--attended-status);
-}
-
-.my-necessity-container .information-row .my-necessity-status.denied {
-  color: var(--denied-status);
-}
-
-.my-necessity-container .buttons {
+.medicine-container .buttons {
   width: 100%;
   height: auto;
   display: flex;
@@ -89,7 +71,7 @@
   gap: 16px;
 }
 
-.my-necessity-container .buttons .button {
+.medicine-container .buttons .button {
   width: calc(50% - 8px);
   height: 48px;
   display: flex;
@@ -108,7 +90,7 @@
 }
 
 @media (max-width: 1023px) {
-    .my-necessity-container {
-        width: 100%;
-    }
+  .medicine-container {
+    width: 100%;
   }
+}
