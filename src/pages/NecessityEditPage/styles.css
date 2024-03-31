@@ -70,6 +70,7 @@
   justify-content: center;
   gap: 40px;
   background: var(--secundary-color);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 24px;
   padding: 24px;
   margin: 24px 0px;
