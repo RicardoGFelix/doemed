@@ -1,4 +1,4 @@
-.medicine-registration-page {
+.profile-edit-page {
   width: 100vw;
   height: auto;
   min-height: 100vh;
@@ -9,7 +9,7 @@
   padding: 0px;
 }
 
-.medicine-registration-page .page-title {
+.profile-edit-page .page-title {
   width: 100%;
   height: auto;
   color: var(--default-black);
@@ -21,7 +21,7 @@
   padding: 24px 0px;
 }
 
-.medicine-registration-page .page-title .profile-button {
+.profile-edit-page .page-title .profile-button {
   width: fit-content;
   height: auto;
   background: transparent;
@@ -33,7 +33,7 @@
   line-height: normal;
 }
 
-.medicine-registration-page .medicine-registration-page-content {
+.profile-edit-page .profile-edit-page-content {
   width: 100%;
   height: auto;
   min-height: calc(100vh - 229px);
@@ -44,9 +44,9 @@
   padding-bottom: 24px;
 }
 
-.medicine-registration-page
-  .medicine-registration-page-content
-  .form-medicine-registration-container {
+.profile-edit-page
+  .profile-edit-page-content
+  .form-profile-edit-container {
   max-width: 1110px;
   height: auto;
   display: flex;
@@ -54,13 +54,14 @@
   justify-content: center;
   gap: 24px;
   background: var(--secundary-color);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   padding: 24px;
   margin: 24px 0px;
 }
 
-.medicine-registration-page
-  .medicine-registration-page-content
-  .form-medicine-registration-container {
+.profile-edit-page
+  .profile-edit-page-content
+  .form-profile-edit-container {
   width: 100%;
   max-width: 854px;
   height: auto;
@@ -70,15 +71,14 @@
   justify-content: center;
   gap: 40px;
   background: var(--secundary-color);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 24px;
   padding: 24px;
   margin: 24px 0px;
 }
 
-.medicine-registration-page
-  .medicine-registration-page-content
-  .form-medicine-registration-container
+.profile-edit-page
+  .profile-edit-page-content
+  .form-profile-edit-container
   .form-inputs {
   width: 100%;
   height: auto;
@@ -89,9 +89,9 @@
   gap: 24px;
 }
 
-.medicine-registration-page
-  .medicine-registration-page-content
-  .form-medicine-registration-container
+.profile-edit-page
+  .profile-edit-page-content
+  .form-profile-edit-container
   .form-inputs
   .input-container {
   width: 100%;
@@ -102,9 +102,9 @@
   justify-content: space-between;
 }
 
-.medicine-registration-page
-  .medicine-registration-page-content
-  .form-medicine-registration-container
+.profile-edit-page
+  .profile-edit-page-content
+  .form-profile-edit-container
   .form-inputs
   .input-container
   .input {
@@ -121,18 +121,9 @@
   color: var(--default-black);
 }
 
-.medicine-registration-page
-  .medicine-registration-page-content
-  .form-medicine-registration-container
-  .form-inputs
-  .input-container
-  .input.dosage {
-  width: calc(65% - 8px);
-}
-
-.medicine-registration-page
-  .medicine-registration-page-content
-  .form-medicine-registration-container
+.profile-edit-page
+  .profile-edit-page-content
+  .form-profile-edit-container
   .form-inputs
   .input-container
   .input::placeholder {
@@ -140,9 +131,20 @@
   color: var(--principal-color);
 }
 
-.medicine-registration-page
-  .medicine-registration-page-content
-  .form-medicine-registration-container
+.profile-edit-page
+  .profile-edit-page-content
+  .form-profile-edit-container
+  .form-inputs
+  .input-container
+  .input:disabled {
+  font-weight: 400;
+  color: var(--default-black);
+  border-bottom: 1px solid var(--default-black);
+}
+
+.profile-edit-page
+  .profile-edit-page-content
+  .form-profile-edit-container
   .button {
   width: 100%;
   height: 48px;
@@ -162,20 +164,24 @@
 }
 
 @media (max-width: 1023px) {
-  .medicine-registration-page {
+  .profile-edit-page {
     flex-direction: column;
   }
 
-  .medicine-registration-page
-    .medicine-registration-page-content
-    .form-medicine-registration-container {
+  .profile-edit-page .profile-edit-page-content {
+    min-height: calc(100vh - 229px);
+  }
+
+  .profile-edit-page
+    .profile-edit-page-content
+    .form-profile-edit-container {
     width: calc(100% - 48px);
     gap: 24px;
   }
 
-  .medicine-registration-page
-    .medicine-registration-page-content
-    .form-medicine-registration-container
+  .profile-edit-page
+    .profile-edit-page-content
+    .form-profile-edit-container
     .form-inputs {
     gap: 16px;
   }
