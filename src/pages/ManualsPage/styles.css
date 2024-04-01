@@ -1,0 +1,176 @@
+.manuals-page {
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--secundary-color);
+  padding: 0px;
+}
+
+.manuals-page .page-title {
+  width: 100%;
+  height: auto;
+  color: var(--default-black);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  padding: 24px 0px;
+}
+
+.manuals-page .page-title .profile-button {
+  width: fit-content;
+  height: auto;
+  background: transparent;
+  border: none;
+  color: var(--principal-color);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.manuals-page .manuals-page-content {
+  width: 100%;
+  height: auto;
+  min-height: calc(100vh - 229px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(12, 196, 220, 0.1);
+  padding-bottom: 24px;
+}
+
+.manuals-page .manuals-page-content .manual-container {
+  width: 100%;
+  max-width: 854px;
+  height: auto;
+  min-height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: var(--secundary-color);
+  border: none;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 24px;
+  margin: 24px 0px 0px;
+}
+
+.manuals-page .manuals-page-content .manual-container .manual-header-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.manuals-page
+  .manuals-page-content
+  .manual-container
+  .manual-header-container
+  .manual-header-title {
+  width: calc(100% - 32px);
+  height: auto;
+  width: 100%;
+  height: auto;
+  color: var(--principal-color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.manuals-page
+  .manuals-page-content
+  .manual-container
+  .manual-header-container
+  .chevron {
+  width: 24px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.manuals-page
+  .manuals-page-content
+  .manual-container.opened
+  .manual-header-container
+  .chevron {
+  rotate: 180deg;
+}
+
+.manuals-page .manuals-page-content .manual-container .manual-text-container {
+  display: none;
+}
+
+.manuals-page
+  .manuals-page-content
+  .manual-container.opened
+  .manual-text-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.manuals-page
+  .manuals-page-content
+  .manual-container.opened
+  .manual-text-container
+  .manual,
+.manuals-page
+  .manuals-page-content
+  .manual-container.opened
+  .manual-text-container
+  .manual-font {
+  width: 100%;
+  height: auto;
+  color: var(--default-black);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.manuals-page
+  .manuals-page-content
+  .manual-container.opened
+  .manual-text-container
+  .manual-font
+  .button-link {
+  width: fit-content;
+  height: auto;
+  background: transparent;
+  border: none;
+  color: var(--principal-color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0px;
+  margin: 0px 4px;
+}
+
+@media (max-width: 1023px) {
+  .manuals-page {
+    flex-direction: column;
+  }
+
+  .manuals-page .manuals-page-content {
+    min-height: calc(100vh - 229px);
+  }
+
+  .manuals-page .manuals-page-content .manual-container {
+    width: calc(100% - 48px);
+  }
+}
