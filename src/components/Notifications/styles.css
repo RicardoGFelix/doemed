@@ -1,0 +1,220 @@
+.notifications-container {
+  width: 0px;
+  height: 0px;
+  display: none;
+  transition: width 2s, height 1s;
+}
+
+.notifications-container.opened {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--secundary-color);
+}
+
+.notifications-container.opened .header-notifications-container {
+  width: 100%;
+  max-width: 1110px;
+  height: 152px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  padding: 24px 128px;
+}
+
+.notifications-container.opened
+  .header-notifications-container
+  .logo-container {
+  width: calc(100% - 96px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notifications-container.opened
+  .header-notifications-container
+  .logo-container
+  .logo-image {
+  height: 128px;
+}
+
+.notifications-container.opened .header-notifications-container .button-close {
+  width: 48px;
+  height: 48px;
+  border: none;
+  cursor: pointer;
+  background-size: 42px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  background-image: url(../../assets/CloseIcon.svg);
+}
+
+.notifications-container.opened .notifications-title {
+  width: 100%;
+  height: auto;
+  color: var(--default-black);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  padding: 24px 0px;
+}
+
+.notifications-container.opened .notifications {
+  width: 100%;
+  max-width: 1110px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 128px;
+}
+
+.notifications-container.opened .notifications .notification-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border-bottom: 1px solid var(--principal-color);
+  padding: 24px;
+}
+
+.notifications-container.opened
+  .notifications
+  .notification-container
+  .notification-header-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.notifications-container.opened
+  .notifications
+  .notification-container
+  .notification-header-container
+  .notification-image-container {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notifications-container.opened
+  .notifications
+  .notification-container
+  .notification-header-container
+  .notification-text-container {
+  width: calc(100% - 80px);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.notifications-container.opened
+  .notifications
+  .notification-container
+  .notification-header-container
+  .notification-text-container
+  .notification-title {
+  width: 100%;
+  height: auto;
+  color: var(--principal-color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: start;
+}
+
+.notifications-container.opened
+  .notifications
+  .notification-container
+  .notification-header-container
+  .notification-text-container
+  .notification-subtitle {
+  width: 100%;
+  height: auto;
+  color: var(--principal-color);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: start;
+}
+
+.notifications-container.opened
+  .notifications
+  .notification-container
+  .notification-header-container
+  .chevron {
+  width: 24px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notifications-container.opened
+  .notifications
+  .notification-container.opened
+  .notification-header-container
+  .chevron {
+  rotate: 180deg;
+}
+
+.notifications-container.opened
+  .notifications
+  .notification-container
+  .notification-content {
+  display: none;
+}
+
+.notifications-container.opened
+  .notifications
+  .notification-container.opened
+  .notification-content {
+  width: 100%;
+  height: auto;
+  display: flex;
+  color: var(--default-black);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media (max-width: 1023px) {
+  .notifications-container.opened .header-notifications-container {
+    padding: 24px;
+  }
+
+  .notifications-container.opened
+    .header-notifications-container
+    .logo-container
+    .logo-image {
+    height: 104px;
+  }
+
+  .notifications-container.opened .notifications {
+    padding: 24px;
+  }
+}
