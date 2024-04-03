@@ -6,7 +6,7 @@ import Header from "../../components/Header/Header";
 import PrincipalColorArrowIcon from "../../assets/PrincipalColorArrowIcon.svg";
 
 function ManualsPage() {
-  function handleManual(manualId: string) {
+  function toggleManual(manualId: string) {
     let manual = document.getElementById(manualId);
 
     if (manual?.classList.contains("opened")) {
@@ -27,7 +27,7 @@ function ManualsPage() {
           <div
             className="manual-header-container"
             onClick={() => {
-              handleManual("storage_manual");
+              toggleManual("storage_manual");
             }}
           >
             <span className="manual-header-title">Manual de Armazenamento</span>
@@ -86,7 +86,7 @@ function ManualsPage() {
           <div
             className="manual-header-container"
             onClick={() => {
-              handleManual("disposal_manual");
+              toggleManual("disposal_manual");
             }}
           >
             <span className="manual-header-title">Manual de Descarte</span>

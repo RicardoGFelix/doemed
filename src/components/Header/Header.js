@@ -4,6 +4,7 @@ import "./styles.css";
 import DoemedLogoPrincipalColor from "../../assets/DoemedLogoPrincipalColor.svg";
 
 import Menu from "../Menu/Menu";
+import Notifications from "../Notifications/Notifications";
 
 export default function Header() {
   function toggleMenu() {
@@ -13,6 +14,16 @@ export default function Header() {
       menu.classList.remove("opened");
     } else {
       menu.classList.add("opened");
+    }
+  }
+
+  function toggleNotifications() {
+    let notifications = document.getElementById("notifications_container");
+
+    if (notifications?.classList.contains("opened")) {
+      notifications.classList.remove("opened");
+    } else {
+      notifications.classList.add("opened");
     }
   }
 
@@ -28,7 +39,13 @@ export default function Header() {
       <figure className="logo-container">
         <img className="logo-image" src={DoemedLogoPrincipalColor} alt="Logo" />
       </figure>
-      <button className="button notifications"></button>
+      <button
+        className="button notifications"
+        onClick={() => {
+          toggleNotifications();
+        }}
+      ></button>
+      <Notifications />
     </div>
   );
 }
