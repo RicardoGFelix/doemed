@@ -1,0 +1,121 @@
+.menu-container {
+  width: 0px;
+  height: 0px;
+  display: none;
+  transition: width 2s, height 1s;
+}
+
+.menu-container.opened {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--secundary-color);
+}
+
+.menu-container.opened .header-menu-container {
+  width: 100%;
+  max-width: 1110px;
+  height: 152px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  padding: 24px 128px;
+}
+
+.menu-container.opened .header-menu-container .logo-container {
+  width: calc(100% - 96px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-container.opened .header-menu-container .logo-container .logo-image {
+  height: 128px;
+}
+
+.menu-container.opened .header-menu-container .button-close {
+  width: 48px;
+  height: 48px;
+  border: none;
+  cursor: pointer;
+  background-size: 42px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  background-image: url(../../assets/CloseIcon.svg);
+}
+
+.menu-container.opened .menu-title {
+  width: 100%;
+  height: auto;
+  color: var(--default-black);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  padding: 24px 0px;
+}
+
+.menu-container.opened .menu-buttons {
+  width: 100%;
+  max-width: 1110px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 128px;
+}
+
+.menu-container.opened .menu-buttons .menu-button {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--principal-color);
+  padding: 24px;
+}
+
+.menu-container.opened .menu-buttons .menu-button .logo-container {
+  width: calc(100% - 96px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-container.opened .menu-buttons .menu-button .button-title {
+  width: calc(100% - 40px);
+  height: auto;
+  color: var(--principal-color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: start;
+}
+
+@media (max-width: 1023px) {
+  .menu-container.opened .header-menu-container {
+    padding: 24px;
+  }
+
+  .menu-container.opened .header-menu-container .logo-container .logo-image {
+    height: 104px;
+  }
+
+  .menu-container.opened .menu-buttons {
+    padding: 24px;
+  }
+}
