@@ -51,6 +51,18 @@
   background-image: url(../../assets/CloseIcon.svg);
 }
 
+.menu-container.opened .menu-title {
+  width: 100%;
+  height: auto;
+  color: var(--default-black);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  padding: 24px 0px;
+}
+
 .menu-container.opened .menu-buttons {
   width: 100%;
   max-width: 1110px;

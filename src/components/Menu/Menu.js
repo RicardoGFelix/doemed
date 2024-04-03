@@ -32,6 +32,7 @@ export default function Menu() {
           }}
         ></button>
       </div>
+      <div className="menu-title">Menu</div>
       <div className="menu-buttons">
         <button className="menu-button">
           <figure className="button-image-container">
