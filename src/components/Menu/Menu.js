@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./styles.css";
 
 import DoemedLogoPrincipalColor from "../../assets/DoemedLogoPrincipalColor.svg";
@@ -6,13 +8,22 @@ import PrincipalColorUserIcon from "../../assets/PrincipalColorUserIcon.svg";
 import SecurityIcon from "../../assets/SecurityIcon.svg";
 import ExitIcon from "../../assets/ExitIcon.svg";
 
+import { signOut } from "../../apis/Authentication";
+
 export default function Menu() {
+  const navigate = useNavigate();
+
   function closeMenu() {
     let menu = document.getElementById("menu");
 
     if (menu) {
       menu.classList.remove("opened");
     }
+  }
+
+  function logout() {
+    signOut();
+    navigate("/");
   }
 
   return (
@@ -60,7 +71,14 @@ export default function Menu() {
           <figure className="button-image-container">
             <img className="button-image" src={ExitIcon} alt="Ícone de Sair" />
           </figure>
-          <span className="button-title">Sair</span>
+          <span
+            className="button-title"
+            onClick={() => {
+              logout();
+            }}
+          >
+            Sair
+          </span>
         </button>
       </div>
     </div>

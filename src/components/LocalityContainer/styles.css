@@ -1,4 +1,4 @@
-.input-container {
+.input-container.register {
   width: 100%;
   height: 48px;
   display: flex;
@@ -7,27 +7,27 @@
   justify-content: space-between;
 }
 
-.select {
+.input-container.register .select {
   width: 100%;
   position: relative;
 }
 
-.select.state {
+.input-container.register .select.state {
   width: calc(35% - 8px);
 }
 
-.select.city {
+.input-container.register .select.city {
   width: calc(65% - 8px);
 }
 
-.state-select,
-.city-select {
+.input-container.register .select.state .state-select,
+.input-container.register .select.city .city-select {
   position: relative;
   width: 100%;
 }
 
-#states,
-#cities {
+.input-container.register .select.state .state-select #states,
+.input-container.register .select.city .city-select #cities {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -38,11 +38,11 @@
   z-index: 5;
 }
 
-.select-button {
+.input-container.register .select.state .state-select .select-button,
+.input-container.register .select.city .city-select .select-button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 4px;
   border-bottom: 1px solid var(--secundary-color);
   background: transparent;
   padding: 16px;
@@ -50,7 +50,16 @@
   outline: none;
 }
 
-.select-button .selected-value {
+.input-container.register
+  .select.state
+  .state-select
+  .select-button
+  .selected-value,
+.input-container.register
+  .select.city
+  .city-select
+  .select-button
+  .selected-value {
   color: var(--secundary-color);
   font-size: 16px;
   font-style: normal;
@@ -58,7 +67,8 @@
   line-height: normal;
 }
 
-.chevron {
+.input-container.register .select.state .state-select .select-button .chevron,
+.input-container.register .select.city .city-select .select-button .chevron {
   width: 24px;
   height: 16px;
   display: flex;
@@ -67,19 +77,39 @@
 }
 
 /* #states:focus + .select-button, */
-#states:checked + .select-button,
-#cities:checked + .select-button {
+.input-container.register
+  .select.state
+  .state-select
+  #states:checked
+  + .select-button,
+.input-container.register
+  .select.city
+  .city-select
+  #cities:checked
+  + .select-button {
   outline: auto var(--secundary-color);
 }
 
 /* #states:focus + .select-button .chevron .select-arrow, */
-#states:checked + .select-button .chevron .select-arrow,
-#cities:checked + .select-button .chevron .select-arrow {
+.input-container.register
+  .select.state
+  .state-select
+  #states:checked
+  + .select-button
+  .chevron
+  .select-arrow,
+.input-container.register
+  .select.city
+  .city-select
+  #cities:checked
+  + .select-button
+  .chevron
+  .select-arrow {
   rotate: 180deg;
 }
 
-.states-options,
-.cities-options {
+.input-container.register .select.state .states-options,
+.input-container.register .select.city .cities-options {
   position: absolute;
   width: 100%;
   height: auto;
@@ -94,8 +124,8 @@
   z-index: 5;
 }
 
-.state-option,
-.city-option {
+.input-container.register .select.state .states-options .state-option,
+.input-container.register .select.city .cities-options .city-option {
   position: relative;
   width: 100%;
   height: auto;
@@ -105,8 +135,16 @@
   cursor: pointer;
 }
 
-.state-option .option-label,
-.city-option .option-label {
+.input-container.register
+  .select.state
+  .states-options
+  .state-option
+  .option-label,
+.input-container.register
+  .select.city
+  .cities-options
+  .city-option
+  .option-label {
   color: var(--secundary-color);
   font-size: 16px;
   font-style: normal;
@@ -114,8 +152,16 @@
   line-height: normal;
 }
 
-.state-option .state-input,
-.city-option .city-input {
+.input-container.register
+  .select.state
+  .states-options
+  .state-option
+  .state-input,
+.input-container.register
+  .select.city
+  .cities-options
+  .city-option
+  .city-input {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -125,8 +171,8 @@
   z-index: 5;
 }
 
-.state-option:hover,
-.city-option:hover {
+.input-container.register .select.state .states-options .state-option:hover,
+.input-container.register .select.city .cities-options .city-option:hover {
   background: #e6e6e6;
   cursor: pointer;
 }

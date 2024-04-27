@@ -2,21 +2,26 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import DoemedLogoSecundaryColor from "../../assets/DoemedLogoSecundaryColor.svg";
+import GoogleIcon from "../../assets/GoogleIcon.svg";
 import "./styles.css";
 
+import { signIn } from "../../apis/Authentication";
 import cookies from "../../utils/cookies";
 
-function InitialPage() {
+function LoginPage() {
   const navigate = useNavigate();
 
-  function navigateToLoginPage(user: string) {
-    cookies.setCookie("@opr/type-of-user", user, null);
+  async function login() {
+    await signIn();
 
-    navigate("/login");
+    const nextRoute = cookies.getCookie("@opr/next-route");
+
+    if (nextRoute) {
+      navigate(nextRoute);
+    }
   }
-
   return (
-    <div className="initial-page">
+    <div className="login-page">
       <div className="presentation-container">
         <figure className="logo-container">
           <img
@@ -34,18 +39,11 @@ function InitialPage() {
           <button
             className="button"
             onClick={() => {
-              navigateToLoginPage("C");
+              login();
             }}
           >
-            Entrar como Cidadão
-          </button>
-          <button
-            className="button"
-            onClick={() => {
-              navigateToLoginPage("I");
-            }}
-          >
-            Entrar como Instituição de Saúde
+            <span>Entrar com Google</span>
+            <img src={GoogleIcon} alt="Ícone do Google" />
           </button>
         </div>
       </div>
@@ -53,4 +51,4 @@ function InitialPage() {
   );
 }
 
-export default InitialPage;
+export default LoginPage;
