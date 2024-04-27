@@ -114,6 +114,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   background: var(--secundary-color);
   border: none;
   border-radius: 16px;
@@ -124,6 +125,14 @@
   text-align: center;
   color: var(--principal-color);
   cursor: pointer;
+}
+
+.login-page .action-container .buttons .button img {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-page .action-container .form-login-container .button.link,

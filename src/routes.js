@@ -21,8 +21,8 @@ import SearchHealthcareInstitutionPage from "./pages/SearchHealthcareInstitution
 import cookies from "./utils/cookies";
 
 const PrivateWrapper = ({ }) => {
-  let isAuthenticated = cookies.getCookie("@opr/token");
-  return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+  let isAuthenticated = cookies.getCookie("@opr/current-user");
+  return isAuthenticated ? <Outlet /> : <Navigate to="/" />;
 };
 
 export default function AppRoutes() {

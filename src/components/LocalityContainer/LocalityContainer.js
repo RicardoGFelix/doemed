@@ -62,7 +62,7 @@ export default function LocalityContainer() {
     inputState.addEventListener("click", (event) => {
       selectedStateValue.textContent = inputState.dataset.label;
       selectedCityValue.textContent = "Cidade";
-      
+
       cookies.setCookie(
         "@doemed/state_register",
         inputState.dataset.label,
@@ -81,7 +81,7 @@ export default function LocalityContainer() {
   inputsCityOptions.forEach((inputCity) => {
     inputCity.addEventListener("click", (event) => {
       selectedCityValue.textContent = inputCity.dataset.label;
-      
+
       cookies.setCookie("@doemed/city_register", inputCity.dataset.label, null);
 
       const isMouseTouch =
@@ -92,7 +92,7 @@ export default function LocalityContainer() {
   });
 
   return (
-    <div className="input-container">
+    <div className="input-container register">
       <div id="state_select" className="select state">
         <div className="state-select">
           <input type="checkbox" id="states" />
