@@ -21,7 +21,7 @@ import SearchHealthcareInstitutionPage from "./pages/SearchHealthcareInstitution
 import cookies from "./utils/cookies";
 
 const PrivateWrapper = ({ }) => {
-  let isAuthenticated = cookies.getCookie("@opr/current-user");
+  let isAuthenticated = cookies.getCookie("@doemed/current-user");
   return isAuthenticated ? <Outlet /> : <Navigate to="/" />;
 };
 

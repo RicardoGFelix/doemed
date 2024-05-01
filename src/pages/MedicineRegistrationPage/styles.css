@@ -118,7 +118,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  color: var(--default-black);
+  color: var(--principal-color);
 }
 
 .medicine-registration-page

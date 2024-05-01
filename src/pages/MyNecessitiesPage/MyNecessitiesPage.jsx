@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
 
 import Header from "../../components/Header/Header";
 import MyNecessity from "../../components/MyNecessity/MyNecessity";
 
+import cookies from "../../utils/cookies";
+
+import { getMyNecessities } from "../../apis/Necessity";
+
 function MyNecessitiesPage() {
+  const [necessities, setNecessities] = useState([]);
+
+  var currentUser = JSON.parse(cookies.getCookie("@doemed/current-user"));
+
+  useEffect(() => {
+    getMyNecessities(currentUser.cpf).then((result) => {
+      setNecessities(result);
+    });
+  }, []);
+
   return (
     <div className="my-necessities-page">
       <Header />
@@ -17,7 +31,14 @@ function MyNecessitiesPage() {
           <button className="search-button"></button>
         </div>
         <div className="necessities-list">
-          <MyNecessity />
+          {necessities.map((necessity) => {
+            return (
+              <MyNecessity
+                key={`${necessity.cpf}-${necessity.drug}-${necessity.drugName}`}
+                necessity={necessity}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

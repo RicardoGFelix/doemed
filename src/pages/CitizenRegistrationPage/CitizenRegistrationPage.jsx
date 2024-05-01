@@ -41,9 +41,9 @@ function CitizenRegistrationPage() {
       };
 
       createCitizen(data, email.value)
-        .then((s) => {
-          console.log("Document written with success: ", s);
-          cookies.setCookie("@opr/current-user", JSON.stringify(data), null);
+        .then(() => {
+          console.log("Document written with success!");
+          cookies.setCookie("@doemed/current-user", JSON.stringify(data), null);
           navigate("/home");
         })
         .catch((e) => {

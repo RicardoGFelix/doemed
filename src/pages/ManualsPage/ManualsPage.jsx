@@ -6,7 +6,7 @@ import Header from "../../components/Header/Header";
 import PrincipalColorArrowIcon from "../../assets/PrincipalColorArrowIcon.svg";
 
 function ManualsPage() {
-  function toggleManual(manualId: string) {
+  function toggleManual(manualId) {
     let manual = document.getElementById(manualId);
 
     if (manual?.classList.contains("opened")) {

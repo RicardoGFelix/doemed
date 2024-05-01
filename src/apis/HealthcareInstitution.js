@@ -1,4 +1,4 @@
-import { doc, setDoc, getDoc } from "firebase/firestore";
+import { collection, doc, setDoc, getDoc, getDocs, query } from "firebase/firestore";
 import { firestore } from "./FirebaseConfiguration";
 
 export const createHealthcareInstitution = async (body, id) => {
@@ -19,5 +19,22 @@ export const getHealthcareInstitution = async (id) => {
     return institution.exists() ? institution.data() : null;
   } catch (e) {
     console.error("Error to get document: ", e);
+  }
+};
+
+export const getHealthcareInstitutions = async () => {
+  try {
+    var result = [];
+
+    const q = query(collection(firestore, "healthcareInstitutions"));
+    const querySnapshot = await getDocs(q);
+
+    querySnapshot.forEach((doc) => {
+      result.push(doc.data());
+    });
+
+    return result;
+  } catch (e) {
+    console.error("Error to get documents: ", e);
   }
 };

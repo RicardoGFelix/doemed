@@ -1,26 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
 
 import DoemedLogoPrincipalColor from "../../assets/DoemedLogoPrincipalColor.svg";
-import NotificationIcon from "../../assets/NotificationIcon.svg";
-import PrincipalColorArrowIcon from "../../assets/PrincipalColorArrowIcon.svg";
+
+import Notification from "../Notification/Notification";
+
+import cookies from "../../utils/cookies";
+
+import { getMyNotifications } from "../../apis/Notification";
 
 export default function Notifications() {
+  const [notifications, setNotifications] = useState([]);
+
+  var currentUser = JSON.parse(cookies.getCookie("@doemed/current-user"));
+
+  useEffect(() => {
+    if (currentUser?.cpf) {
+      getMyNotifications(currentUser.cpf).then((result) => {
+        setNotifications(result);
+      });
+    }
+  }, []);
+
   function closeNotifications() {
     let notifications = document.getElementById("notifications_container");
 
     if (notifications) {
       notifications.classList.remove("opened");
-    }
-  }
-
-  function toggleNotification(notificationId) {
-    let notification = document.getElementById(notificationId);
-
-    if (notification?.classList.contains("opened")) {
-      notification.classList.remove("opened");
-    } else {
-      notification?.classList.add("opened");
     }
   }
 
@@ -43,69 +49,14 @@ export default function Notifications() {
       </div>
       <div className="notifications-title">Notificações</div>
       <div className="notifications">
-        <div className="notification-container">
-          <div className="notification-header-container">
-            <figure className="notification-image-container">
-              <img
-                className="notification-image"
-                src={NotificationIcon}
-                alt="Ícone de Notificação"
-              />
-            </figure>
-            <div className="notification-text-container">
-              <span className="notification-title">
-                Sua necessidade foi atendida!
-              </span>
-              <span className="notification-subtitle">
-                06/03/2024, às 15:46
-              </span>
-            </div>
-            <div className="chevron">
-              <img
-                className="button-arrow"
-                src={PrincipalColorArrowIcon}
-                alt="Ícone de Seta"
-              />
-            </div>
-          </div>
-          <p className="notification-content">
-            Sua necessidade do medicamento Clonazepam foi atendida! Dirija-se
-            até CLIPSI Hospital Geral de Campina Grande para coletar o
-            medicamento.
-          </p>
-        </div>
-
-        <div className="notification-container">
-          <div className="notification-header-container">
-            <figure className="notification-image-container">
-              <img
-                className="notification-image"
-                src={NotificationIcon}
-                alt="Ícone de Notificação"
-              />
-            </figure>
-            <div className="notification-text-container">
-              <span className="notification-title">
-                Sua necessidade foi atendida!
-              </span>
-              <span className="notification-subtitle">
-                06/03/2024, às 15:46
-              </span>
-            </div>
-            <div className="chevron">
-              <img
-                className="button-arrow"
-                src={PrincipalColorArrowIcon}
-                alt="Ícone de Seta"
-              />
-            </div>
-          </div>
-          <p className="notification-content">
-            Sua necessidade do medicamento Clonazepam foi atendida! Dirija-se
-            até CLIPSI Hospital Geral de Campina Grande para coletar o
-            medicamento.
-          </p>
-        </div>
+        {notifications.map((notification) => {
+          return (
+            <Notification
+              key={`${notification.patientCPF}-${notification.drugName}-${notification.timestamp}`}
+              notification={notification}
+            />
+          );
+        })}
       </div>
     </div>
   );
