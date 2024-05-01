@@ -8,6 +8,16 @@ export default function LocalityProfileEditContainer() {
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
 
+  var currentUser = JSON.parse(cookies.getCookie("@doemed/current-user"));
+
+  var selectedStateValue = document.getElementById("selected_state_value");
+  var stateOptions = document.getElementById("states");
+  var inputsStateOptions = document.querySelectorAll(".state-option input");
+
+  var selectedCityValue = document.getElementById("selected_city_value");
+  var cityOptions = document.getElementById("cities");
+  var inputsCityOptions = document.querySelectorAll(".city-option input");
+
   async function fetchStates() {
     try {
       const response = await fetch(
@@ -38,36 +48,16 @@ export default function LocalityProfileEditContainer() {
         setCities(data);
       }
     } catch (error) {
-      console.error("Erro ao buscar estados: ", error);
+      console.error("Erro ao buscar cidades: ", error);
     }
   }
-
-  useEffect(() => {
-    try {
-      fetchStates();
-    } catch (error) {
-      console.error("Erro ao buscar estados: ", error);
-    }
-  }, []);
-
-  var selectedStateValue = document.getElementById("selected_state_value");
-  var stateOptions = document.getElementById("states");
-  var inputsStateOptions = document.querySelectorAll(".state-option input");
-
-  var selectedCityValue = document.getElementById("selected_city_value");
-  var cityOptions = document.getElementById("cities");
-  var inputsCityOptions = document.querySelectorAll(".city-option input");
 
   inputsStateOptions.forEach((inputState) => {
     inputState.addEventListener("click", (event) => {
       selectedStateValue.textContent = inputState.dataset.label;
       selectedCityValue.textContent = "Cidade";
-      
-      cookies.setCookie(
-        "@doemed/state_edit",
-        inputState.dataset.label,
-        null
-      );
+
+      cookies.setCookie("@doemed/state_edit", inputState.dataset.label, null);
 
       fetchCities();
 
@@ -81,7 +71,7 @@ export default function LocalityProfileEditContainer() {
   inputsCityOptions.forEach((inputCity) => {
     inputCity.addEventListener("click", (event) => {
       selectedCityValue.textContent = inputCity.dataset.label;
-      
+
       cookies.setCookie("@doemed/city_edit", inputCity.dataset.label, null);
 
       const isMouseTouch =
@@ -91,6 +81,30 @@ export default function LocalityProfileEditContainer() {
     });
   });
 
+  useEffect(() => {
+    try {
+      fetchStates();
+    } catch (error) {
+      console.error("Erro ao buscar estados: ", error);
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      if (currentUser?.locality) {
+        const state = currentUser?.locality?.state;
+        const city = currentUser?.locality?.city;
+
+        cookies.setCookie("@doemed/state_edit", state, null);
+        cookies.setCookie("@doemed/city_edit", city, null);
+
+        fetchCities();
+      }
+    } catch (error) {
+      console.error("Erro ao buscar estados: ", error);
+    }
+  }, []);
+
   return (
     <div className="input-container">
       <div id="state_select" className="select state">
@@ -99,7 +113,9 @@ export default function LocalityProfileEditContainer() {
 
           <div className="select-button">
             <div id="selected_state_value" className="selected-value">
-              Estado
+              {currentUser?.locality?.state
+                ? currentUser.locality.state
+                : "Estado"}
             </div>
 
             <div className="chevron">
@@ -136,7 +152,9 @@ export default function LocalityProfileEditContainer() {
 
           <div className="select-button">
             <div id="selected_city_value" className="selected-value">
-              Cidade
+              {currentUser?.locality?.city
+                ? currentUser.locality.city
+                : "Cidade"}
             </div>
 
             <div className="chevron">

@@ -45,7 +45,7 @@ export default function Menu() {
       </div>
       <div className="menu-title">Menu</div>
       <div className="menu-buttons">
-        <button className="menu-button">
+        <button className="menu-button" onClick={() => navigate("/meu-perfil")}>
           <figure className="button-image-container">
             <img
               className="button-image"

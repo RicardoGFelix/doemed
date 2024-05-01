@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
 
 import Header from "../../components/Header/Header";
 import Medicine from "../../components/Medicine/Medicine";
 
+import cookies from "../../utils/cookies";
+import { getMyMedicines } from "../../apis/Medicine";
+
 function MedicineStockPage() {
+  const [medicines, setMedicines] = useState([]);
+
+  var currentUser = JSON.parse(cookies.getCookie("@doemed/current-user"));
+
+  useEffect(() => {
+    getMyMedicines(currentUser.cnes).then((result) => {
+      setMedicines(result);
+    });
+  }, []);
+
   return (
     <div className="medicine-stock-page">
       <Header />
@@ -17,7 +30,14 @@ function MedicineStockPage() {
           <button className="search-button"></button>
         </div>
         <div className="medicine-list">
-          <Medicine />
+          {medicines.map((medicine) => {
+            return (
+              <Medicine
+                key={`${medicine.cnes}-${medicine.drug}-${medicine.drugName}`}
+                medicine={medicine}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

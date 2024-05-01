@@ -47,6 +47,10 @@
   background-color: var(--default-red);
 }
 
+.my-necessity-container .information-row .my-necessity-targe.yellow {
+  background-color: var(--default-yellow);
+}
+
 .my-necessity-container .information-row .my-necessity-text {
   width: calc(65% - 8px);
   height: auto;

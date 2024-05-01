@@ -1,12 +1,13 @@
 :root {
-  --principal-color: #0CC4DC;
-  --secundary-color: #FFFFFF;
+  --principal-color: #0cc4dc;
+  --secundary-color: #ffffff;
   --default-black: #000000;
-  --default-red: #FF0000;
-  --free-targe: #F8F8FF;
-  --opened-status: #FFD700;
-  --attended-status: #00FF7F;
-  --denied-status: #FF6347;
+  --default-red: #ff0000;
+  --default-yellow: #ffff00;
+  --free-targe: #f8f8ff;
+  --opened-status: #ffd700;
+  --attended-status: #00ff7f;
+  --denied-status: #ff6347;
 }
 
 * {

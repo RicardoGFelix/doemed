@@ -14,7 +14,7 @@ function LoginPage() {
   async function login() {
     await signIn();
 
-    const nextRoute = cookies.getCookie("@opr/next-route");
+    const nextRoute = cookies.getCookie("@doemed/next-route");
 
     if (nextRoute) {
       navigate(nextRoute);

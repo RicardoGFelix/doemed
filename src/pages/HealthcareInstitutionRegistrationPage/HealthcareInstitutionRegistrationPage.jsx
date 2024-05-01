@@ -18,35 +18,37 @@ function HealthcareInstitutionRegistrationPage() {
     const cnes = document.getElementById("cnes_input");
     const institutionName = document.getElementById("institution_name_input");
     const address = document.getElementById("address_input");
-    const number = document.getElementById("number_input");
     const state = cookies.getCookie("@doemed/state_register");
     const city = cookies.getCookie("@doemed/city_register");
+    const phone = document.getElementById("phone_input");
+    const openingHours = document.getElementById("opening_hours_input");
     const email = document.getElementById("email_input");
 
     if (
       validations.validateInput(cnes.value) &&
       validations.validateInput(institutionName.value) &&
       validations.validateInput(address.value) &&
-      validations.validateInput(number.value) &&
       validations.validateInput(state) &&
       validations.validateInput(city) &&
+      validations.validateInput(phone) &&
+      validations.validateInput(openingHours) &&
       validations.validateInput(email.value)
     ) {
-      const locality = { state: state, city: city };
+      const locality = { address: address.value, state: state, city: city };
 
       const data = {
         cnes: cnes.value,
         institutionName: institutionName.value,
-        address: address.value,
-        number: number.value,
-        locality: JSON.stringify(locality),
+        locality: locality,
+        phone: phone.value,
+        openingHours: openingHours.value,
         email: email.value,
       };
 
       createHealthcareInstitution(data, email.value)
         .then((s) => {
-          console.log("Document written with success: ", s);
-          cookies.setCookie("@opr/current-user", JSON.stringify(data), null);
+          console.log("Document written with success!");
+          cookies.setCookie("@doemed/current-user", JSON.stringify(data), null);
           navigate("/home");
         })
         .catch((e) => {
@@ -92,24 +94,30 @@ function HealthcareInstitutionRegistrationPage() {
             />
           </div>
           <div className="input-container">
-            <div className="input-container-medium-size">
-              <input
-                id="address_input"
-                className="input"
-                type="text"
-                placeholder="Endereço"
-              />
-            </div>
-            <div className="input-container-small-size">
-              <input
-                id="number_input"
-                className="input"
-                type="text"
-                placeholder="Número"
-              />
-            </div>
+            <input
+              id="address_input"
+              className="input"
+              type="text"
+              placeholder="Endereço"
+            />
           </div>
           <LocalityContainer />
+          <div className="input-container">
+            <input
+              id="phone_input"
+              className="input"
+              type="text"
+              placeholder="Telefone"
+            />
+          </div>
+          <div className="input-container">
+            <input
+              id="opening_hours_input"
+              className="input"
+              type="text"
+              placeholder="Horário de Funcionamento"
+            />
+          </div>
           <div className="input-container">
             <input
               id="email_input"

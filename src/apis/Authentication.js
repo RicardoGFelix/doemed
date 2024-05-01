@@ -16,7 +16,7 @@ export const signIn = async () => {
     signInWithPopup(auth, provider).then(async (result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
 
-      const typeOfUser = cookies.getCookie("@opr/type-of-user");
+      const typeOfUser = cookies.getCookie("@doemed/type-of-user");
       const email = result?.user?.email;
       const accessToken = result?.user?.accessToken;
 
@@ -40,15 +40,14 @@ const loginAsACitizen = async (id, accessToken) => {
   if (id) {
     const citizen = await getCitizen(id);
     var nextRoute = "/cadastrar-cidadao";
-    console.log(citizen);
 
     if (citizen?.cpf) {
-      cookies.setCookie("@opr/access-token", accessToken, null);
-      cookies.setCookie("@opr/current-user", JSON.stringify(citizen), null);
+      cookies.setCookie("@doemed/access-token", accessToken, null);
+      cookies.setCookie("@doemed/current-user", JSON.stringify(citizen), null);
       nextRoute = "/home";
     }
 
-    cookies.setCookie("@opr/next-route", nextRoute, null);
+    cookies.setCookie("@doemed/next-route", nextRoute, null);
   }
 };
 
@@ -58,16 +57,16 @@ const loginAsAInstitution = async (id, accessToken) => {
     var nextRoute = "/cadastrar-instituicao-de-saude";
 
     if (institution?.cnes) {
-      cookies.setCookie("@opr/access-token", accessToken, null);
-      cookies.setCookie("@opr/current-user", JSON.stringify(institution), null);
+      cookies.setCookie("@doemed/access-token", accessToken, null);
+      cookies.setCookie("@doemed/current-user", JSON.stringify(institution), null);
       nextRoute = "/home";
     }
 
-    cookies.setCookie("@opr/next-route", nextRoute, null);
+    cookies.setCookie("@doemed/next-route", nextRoute, null);
   }
 };
 
 export const signOut = () => {
-  cookies.deleteCookie("@opr/access-token");
-  cookies.deleteCookie("@opr/current-user");
+  cookies.deleteCookie("@doemed/access-token");
+  cookies.deleteCookie("@doemed/current-user");
 };

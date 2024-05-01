@@ -1,4 +1,4 @@
-import { doc, setDoc, getDoc } from "firebase/firestore";
+import { doc, setDoc, getDoc, updateDoc } from "firebase/firestore";
 import { firestore } from "./FirebaseConfiguration";
 
 export const createCitizen = async (body, id) => {
@@ -17,5 +17,15 @@ export const getCitizen = async (id) => {
     return citizen.exists() ? citizen.data() : null;
   } catch (e) {
     console.error("Error to get document: ", e);
+  }
+};
+
+export const updateCitizen = async (id, body) => {
+  try {
+    const updateRef = doc(firestore, "citizens", id);
+    await updateDoc(updateRef, body);
+    console.log("Document with ID updated: ", id);
+  } catch (e) {
+    console.error("Error updating document: ", e);
   }
 };

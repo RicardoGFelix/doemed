@@ -1,6 +1,7 @@
 .citizen-registration-page {
   width: 100vw;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,7 +51,9 @@
   padding: 16px;
 }
 
-.citizen-registration-page .action-container .form-citizen-registration-container {
+.citizen-registration-page
+  .action-container
+  .form-citizen-registration-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -59,7 +62,10 @@
   gap: 24px;
 }
 
-.citizen-registration-page .action-container .form-citizen-registration-container .input-container {
+.citizen-registration-page
+  .action-container
+  .form-citizen-registration-container
+  .input-container {
   width: 100%;
   height: 48px;
   display: flex;
@@ -68,7 +74,11 @@
   justify-content: space-between;
 }
 
-.citizen-registration-page .action-container .form-citizen-registration-container .input-container .input {
+.citizen-registration-page
+  .action-container
+  .form-citizen-registration-container
+  .input-container
+  .input {
   width: 100%;
   height: 48px;
   padding: 0px 16px;
@@ -100,7 +110,10 @@
   gap: 24px;
 }
 
-.citizen-registration-page .action-container .form-citizen-registration-container .button,
+.citizen-registration-page
+  .action-container
+  .form-citizen-registration-container
+  .button,
 .citizen-registration-page .action-container .buttons .button {
   width: 100%;
   height: 48px;
@@ -119,7 +132,10 @@
   cursor: pointer;
 }
 
-.citizen-registration-page .action-container .form-citizen-registration-container .button.link,
+.citizen-registration-page
+  .action-container
+  .form-citizen-registration-container
+  .button.link,
 .citizen-registration-page .action-container .buttons .button.link {
   background: transparent;
   color: var(--secundary-color);

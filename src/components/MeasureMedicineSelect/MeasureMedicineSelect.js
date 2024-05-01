@@ -4,11 +4,11 @@ import "./styles.css";
 import cookies from "../../utils/cookies";
 import { useEffect } from "react";
 
-export default function MeasureSelect() {
+export default function MeasureMedicineSelect() {
   var measures = ["mg", "g", "kg", "ml", "l"];
 
-  var necessityInEdit = JSON.parse(
-    cookies.getCookie("@doemed/necessity-in-edit")
+  var medicineInEdit = JSON.parse(
+    cookies.getCookie("@doemed/medicine-in-edit")
   );
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function MeasureSelect() {
         selectedMeasureValue.textContent = inputMeasure.value;
 
         cookies.setCookie(
-          "@doemed/measure_necessity",
+          "@doemed/measure_medicine",
           inputMeasure.dataset.label,
           null
         );
@@ -45,8 +45,8 @@ export default function MeasureSelect() {
 
         <div className="select-button">
           <div id="selected_measure_value" className="selected-value">
-            {necessityInEdit?.dosage?.measure
-              ? necessityInEdit.dosage.measure
+            {medicineInEdit?.dosage?.measure
+              ? medicineInEdit.dosage.measure
               : "Medida"}
           </div>
 

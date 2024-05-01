@@ -10,7 +10,7 @@ function InitialPage() {
   const navigate = useNavigate();
 
   function navigateToLoginPage(user: string) {
-    cookies.setCookie("@opr/type-of-user", user, null);
+    cookies.setCookie("@doemed/type-of-user", user, null);
 
     navigate("/login");
   }
