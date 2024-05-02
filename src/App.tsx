@@ -1,13 +1,9 @@
-import React from 'react';
-import './App.css';
-import InitialPage from './pages/InitialPage/InitialPage';
+import React from "react";
+import "./App.css";
+import AppRoutes from "./routes";
 
 function App() {
-  return (
-    <div className="App">
-      <InitialPage/>
-    </div>
-  );
+  return <AppRoutes />;
 }
 
 export default App;

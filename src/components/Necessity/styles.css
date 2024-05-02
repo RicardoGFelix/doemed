@@ -1,0 +1,68 @@
+.necessity-container {
+  width: calc(50% - 16px);
+  height: 120;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: var(--secundary-color);
+  border: none;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 24px;
+}
+
+.necessity-container .information-row {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.necessity-container .information-row .necessity-title {
+  width: 100%;
+  height: auto;
+  color: var(--default-black);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.necessity-container .information-row .necessity-text {
+  width: 100%;
+  height: auto;
+  color: var(--default-black);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.necessity-container .button {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--principal-color);
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  color: var(--secundary-color);
+  cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+  .necessity-container {
+    width: 100%;
+  }
+}

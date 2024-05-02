@@ -1,0 +1,214 @@
+.healthcare-institution-registration-page {
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--principal-color);
+  padding: 64px 128px;
+}
+
+.healthcare-institution-registration-page .presentation-container {
+  width: calc(50% - 24px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.healthcare-institution-registration-page
+  .presentation-container
+  .logo-container {
+  width: 100%;
+}
+
+.healthcare-institution-registration-page
+  .presentation-container
+  .logo-container
+  .logo-image {
+  width: 100%;
+}
+
+.healthcare-institution-registration-page
+  .presentation-container
+  .presentation-text {
+  width: 100%;
+  height: auto;
+  display: block;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  color: var(--secundary-color);
+}
+
+.healthcare-institution-registration-page .action-container {
+  width: calc(50% - 56px);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 0.5px solid var(--secundary-color); */
+  border-radius: 16px;
+  gap: 64px;
+  padding: 16px;
+}
+
+.healthcare-institution-registration-page
+  .action-container
+  .form-healthcare-institution-registration-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.healthcare-institution-registration-page
+  .action-container
+  .form-healthcare-institution-registration-container
+  .input-container {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.healthcare-institution-registration-page
+  .action-container
+  .form-healthcare-institution-registration-container
+  .input-container
+  .input-container-medium-size {
+  width: calc(65% - 8px);
+}
+
+.healthcare-institution-registration-page
+  .action-container
+  .form-healthcare-institution-registration-container
+  .input-container
+  .input-container-small-size {
+  width: calc(35% - 8px);
+}
+
+.healthcare-institution-registration-page
+  .action-container
+  .form-healthcare-institution-registration-container
+  .input-container
+  .input,
+.healthcare-institution-registration-page
+  .action-container
+  .form-healthcare-institution-registration-container
+  .input-container
+  .input-container-medium-size
+  .input,
+.healthcare-institution-registration-page
+  .action-container
+  .form-healthcare-institution-registration-container
+  .input-container
+  .input-container-small-size
+  .input {
+  width: 100%;
+  height: 48px;
+  padding: 0px 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--secundary-color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--secundary-color);
+}
+
+.healthcare-institution-registration-page
+  .action-container
+  .form-healthcare-institution-registration-container
+  .input-container
+  .input::placeholder,
+.healthcare-institution-registration-page
+  .action-container
+  .form-healthcare-institution-registration-container
+  .input-container
+  .input-container-medium-size
+  .input::placeholder,
+.healthcare-institution-registration-page
+  .action-container
+  .form-healthcare-institution-registration-container
+  .input-container
+  .input-container-small-size
+  .input::placeholder {
+  font-weight: 400;
+  color: var(--secundary-color);
+}
+
+.healthcare-institution-registration-page .action-container .buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.healthcare-institution-registration-page
+  .action-container
+  .form-healthcare-institution-registration-container
+  .button,
+.healthcare-institution-registration-page .action-container .buttons .button {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secundary-color);
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  color: var(--principal-color);
+  cursor: pointer;
+}
+
+.healthcare-institution-registration-page
+  .action-container
+  .form-healthcare-institution-registration-container
+  .button.link,
+.healthcare-institution-registration-page
+  .action-container
+  .buttons
+  .button.link {
+  background: transparent;
+  color: var(--secundary-color);
+}
+
+@media (max-width: 1023px) {
+  .healthcare-institution-registration-page {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .healthcare-institution-registration-page .presentation-container {
+    width: 100%;
+  }
+
+  .healthcare-institution-registration-page
+    .presentation-container
+    .presentation-text {
+    display: none;
+  }
+
+  .healthcare-institution-registration-page .action-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

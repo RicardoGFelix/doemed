@@ -1,0 +1,118 @@
+.my-necessity-container {
+  width: calc(50% - 16px);
+  height: 204px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: var(--secundary-color);
+  border: none;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 24px;
+}
+
+.my-necessity-container .information-row {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.my-necessity-container .information-row .my-necessity-title {
+  width: calc(80% - 4px);
+  height: auto;
+  color: var(--default-black);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.my-necessity-container .information-row .my-necessity-targe {
+  width: calc(20% - 4px);
+  height: 8px;
+  background-color: var(--free-targe);
+}
+
+.my-necessity-container .information-row .my-necessity-targe.black {
+  background-color: var(--default-black);
+}
+
+.my-necessity-container .information-row .my-necessity-targe.red {
+  background-color: var(--default-red);
+}
+
+.my-necessity-container .information-row .my-necessity-targe.yellow {
+  background-color: var(--default-yellow);
+}
+
+.my-necessity-container .information-row .my-necessity-text {
+  width: calc(65% - 8px);
+  height: auto;
+  color: var(--default-black);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.my-necessity-container .information-row .my-necessity-status {
+  width: calc(35% - 8px);
+  height: auto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: end;
+}
+
+.my-necessity-container .information-row .my-necessity-status.opened {
+  color: var(--opened-status);
+}
+
+.my-necessity-container .information-row .my-necessity-status.attended {
+  color: var(--attended-status);
+}
+
+.my-necessity-container .information-row .my-necessity-status.denied {
+  color: var(--denied-status);
+}
+
+.my-necessity-container .buttons {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.my-necessity-container .buttons .button {
+  width: calc(50% - 8px);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--principal-color);
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  color: var(--secundary-color);
+  cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+    .my-necessity-container {
+        width: 100%;
+    }
+  }
