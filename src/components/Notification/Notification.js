@@ -38,8 +38,7 @@ export default function Notification({ notification }) {
             Sua necessidade foi atendida!
           </span>
           <span className="notification-subtitle">
-            {functions.calculateDate(notification.timestamp)}, às
-            {functions.calculateTime(notification.timestamp)}
+            {functions.calculateDate(notification.timestamp)}, às {functions.calculateTime(notification.timestamp)}
           </span>
         </div>
         <div className="chevron">
